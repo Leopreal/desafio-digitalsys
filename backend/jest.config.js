@@ -1,0 +1,10 @@
+module.exports = {
+  testEnvironment: 'node',
+  coveragePathIgnorePatterns: ['/node_modules/'],
+  testMatch: ['**/__tests__/**/*.js', '**/?(*.)+(spec|test).js'],
+  collectCoverageFrom: [
+    'src/**/*.js',
+    '!src/server.js', // Ignorar arquivo de inicialização
+  ],
+  verbose: true,
+};
