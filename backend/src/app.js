@@ -1,5 +1,6 @@
 const express = require("express");
 const { getAssets, addAsset } = require("./store/assetsStore");
+const { buildSummary } = require("./service/summaryService");
 
 const app = express();
 app.use(express.json());
@@ -15,11 +16,9 @@ app.get("/assets", (req, res) => {
 
 app.get("/summary", (req, res) => {
   const assets = getAssets();
-  const total_invested = assets.reduce(
-    (sum, asset) => sum + asset.amount * asset.price_paid,
-    0,
-  );
-  res.status(200).json({ total_invested, total_assets: assets.length, assets });
+  const summary = buildSummary(assets);
+
+  res.status(200).json(summary);
 });
 
 module.exports = app;
