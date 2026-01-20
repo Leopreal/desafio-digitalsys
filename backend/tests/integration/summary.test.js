@@ -20,9 +20,22 @@ describe("Summary API Integration Tests", () => {
     expect(response.body).toEqual({
       total_invested: 3300,
       total_assets: 2,
+      total_current_value: 7500,
       assets: [
-        { symbol: "ETH", amount: 2, price_paid: 1500 },
-        { symbol: "BTC", amount: 0.1, price_paid: 3000 },
+        {
+          symbol: "ETH",
+          amount: 2,
+          price_paid: 1500,
+          current_price: 2000,
+          current_value: 4000,
+        },
+        {
+          symbol: "BTC",
+          amount: 0.1,
+          price_paid: 3000,
+          current_price: 35000,
+          current_value: 3500,
+        },
       ],
     });
   });
