@@ -1,12 +1,10 @@
+const mockPrices = require("../data/assets.json");
+
 function buildSummary(assets) {
   const total_invested = assets.reduce(
     (acc, asset) => acc + asset.amount * asset.price_paid,
     0,
   );
-  const mockPrices = {
-    BTC: 35000,
-    ETH: 2000,
-  };
 
   const assetsWithCurrentValues = assets.map((asset) => {
     const current_price = mockPrices[asset.symbol];
