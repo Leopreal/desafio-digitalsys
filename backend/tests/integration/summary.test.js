@@ -18,13 +18,12 @@ describe("Summary API Integration Tests", () => {
 
     expect(response.status).toBe(200);
     expect(response.body).toEqual({
-      total_invested: 4500,
+      total_invested: 3300,
       total_assets: 2,
       assets: [
         { symbol: "ETH", amount: 2, price_paid: 1500 },
         { symbol: "BTC", amount: 0.1, price_paid: 3000 },
       ],
     });
-
   });
 });
