@@ -1,9 +1,8 @@
-// src/components/features/TransactionForm/TransactionForm.test.tsx
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { describe, it, expect, vi } from "vitest";
-import { TransactionForm } from "./TransactionForm";
-import * as assetService from "@/services/assets.service";
+import { TransactionFormContainer } from "../../containers/TransactionFormContainer";
+import * as assetService from "../../services/assets.service";
 
 describe("TransactionForm", () => {
   it("submits the form and calls createAsset with correct data", async () => {
@@ -11,7 +10,7 @@ describe("TransactionForm", () => {
       .spyOn(assetService, "createAsset")
       .mockResolvedValueOnce({ id: 1 });
 
-    render(<TransactionForm />);
+    render(<TransactionFormContainer />);
 
     const nameInput = screen.getByLabelText(/nome/i);
     const amountInput = screen.getByLabelText(/valor/i);
@@ -22,8 +21,9 @@ describe("TransactionForm", () => {
     await userEvent.click(submitButton);
 
     expect(createAssetMock).toHaveBeenCalledWith({
-      name: "BTC",
+      symbol: "BTC",
       amount: 1000,
+      price_paid: 0,
     });
   });
 });
