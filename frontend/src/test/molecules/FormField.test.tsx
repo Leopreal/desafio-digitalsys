@@ -4,7 +4,7 @@ import { FormField } from "../../components/molecules/FormField";
 
 describe("FormField Molecule", () => {
   it("renders label and input", () => {
-    render(<FormField label="Asset Symbol" placeholder="BTC" />);
+    render(<FormField id="symbol" label="Asset Symbol" placeholder="BTC" />);
 
     expect(screen.getByText("Asset Symbol")).toBeInTheDocument();
     expect(screen.getByPlaceholderText("BTC")).toBeInTheDocument();

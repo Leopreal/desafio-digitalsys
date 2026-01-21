@@ -4,6 +4,7 @@ import { Input } from "../../atoms/Input/index";
 import { Container } from "./styles";
 
 export interface FormFieldProps {
+  id: string;
   label: string;
   placeholder?: string;
   type?: "text" | "number";
@@ -12,6 +13,7 @@ export interface FormFieldProps {
 }
 
 export const FormField: React.FC<FormFieldProps> = ({
+  id,
   label,
   placeholder,
   type = "text",
@@ -20,8 +22,9 @@ export const FormField: React.FC<FormFieldProps> = ({
 }) => {
   return (
     <Container>
-      <Label>{label}</Label>
+      <Label htmlFor={id}>{label}</Label>
       <Input
+        id={id}
         placeholder={placeholder}
         type={type}
         value={value}

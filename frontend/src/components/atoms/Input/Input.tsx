@@ -2,6 +2,7 @@ import React from "react";
 import { StyledInput } from "./styles";
 
 export interface InputProps {
+  id: string;
   value?: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   placeholder?: string;
@@ -10,6 +11,7 @@ export interface InputProps {
 }
 
 export const Input: React.FC<InputProps> = ({
+  id,
   value,
   onChange,
   placeholder,
@@ -18,6 +20,7 @@ export const Input: React.FC<InputProps> = ({
 }) => {
   return (
     <StyledInput
+      id={id}
       value={value}
       onChange={onChange}
       placeholder={placeholder}

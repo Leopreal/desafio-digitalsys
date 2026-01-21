@@ -6,9 +6,9 @@ export default {
 };
 
 export const Default = () => (
-  <FormField label="Asset Symbol" placeholder="BTC" />
+  <FormField id="symbol" label="Asset Symbol" placeholder="BTC" />
 );
 
 export const NumberField = () => (
-  <FormField label="Amount" type="number" placeholder="0.0" />
+  <FormField id="amount" label="Amount" type="number" placeholder="0.0" />
 );
