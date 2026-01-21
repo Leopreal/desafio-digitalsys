@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import { styled } from "styled-components";
 
 const AppContainer = styled.div`
   min-height: 100vh;
@@ -21,7 +21,6 @@ const Main = styled.main`
   margin: 0 auto;
   padding: 2rem;
 `;
-
 function App() {
   return (
     <AppContainer>
