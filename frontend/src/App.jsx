@@ -1,35 +1,38 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import styled from 'styled-components';
+
+const AppContainer = styled.div`
+  min-height: 100vh;
+  background-color: #0a0e27;
+  color: white;
+`;
+
+const Header = styled.header`
+  background-color: #1a1f3a;
+  padding: 1.5rem;
+`;
+
+const Title = styled.h1`
+  font-size: 1.8rem;
+  font-weight: bold;
+`;
+
+const Main = styled.main`
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+`;
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <AppContainer>
+      <Header>
+        <Title>🚀 Stardust Ledger</Title>
+      </Header>
+      <Main>
+        <p>Teste</p>
+      </Main>
+    </AppContainer>
+  );
 }
 
-export default App
+export default App;
