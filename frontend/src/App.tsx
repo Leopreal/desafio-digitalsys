@@ -1,4 +1,5 @@
 import { styled } from "styled-components";
+import { Button } from "./components/atoms/Button";
 
 const AppContainer = styled.div`
   min-height: 100vh;
@@ -29,6 +30,12 @@ function App() {
       </Header>
       <Main>
         <p>Teste</p>
+        <Button
+          variant="primary"
+          size="medium"
+          onClick={() => alert("Button clicked!")}
+          children={"Teste"}
+        ></Button>
       </Main>
     </AppContainer>
   );
