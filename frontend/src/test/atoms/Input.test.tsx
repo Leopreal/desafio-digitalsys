@@ -1,6 +1,6 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
-import { Input } from "./Input"; 
+import { Input } from "../../components/atoms/Input";
 
 describe("Input Atom", () => {
   it("renders with placeholder", () => {
