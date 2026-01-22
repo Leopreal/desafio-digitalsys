@@ -1,21 +1,23 @@
+import api from "./api.service";
+
 export interface CreateAssetPayload {
   symbol: string;
   amount: number;
   price_paid: number;
 }
 
-export async function createAsset(payload: CreateAssetPayload) {
-  const response = await fetch("http://localhost:3000/assets", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(payload),
-  });
+export type Asset = {
+  symbol: string;
+  amount: number;
+  price_paid: number;
+};
 
-  if (!response.ok) {
-    throw new Error("Failed to create asset");
-  }
+export async function createAsset(payload: CreateAssetPayload): Promise<Asset> {
+  const response = await api.post("/assets", payload);
+  return response.data;
+}
 
-  return response.json();
+export async function getAssets(): Promise<Asset[]> {
+  const response = await api.get("/assets");
+  return response.data;
 }
