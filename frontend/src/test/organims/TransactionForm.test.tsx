@@ -8,7 +8,7 @@ describe("TransactionForm", () => {
   it("submits the form and calls createAsset with correct data", async () => {
     const createAssetMock = vi
       .spyOn(assetService, "createAsset")
-      .mockResolvedValueOnce({ id: 1 });
+      .mockResolvedValueOnce({ symbol: "BTC", amount: 1000, price_paid: 0 });
 
     render(<TransactionFormContainer />);
 

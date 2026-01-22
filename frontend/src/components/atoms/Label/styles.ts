@@ -6,5 +6,5 @@ export const StyledLabel = styled.label`
 
   font-size: 0.875rem;
   font-weight: 500;
-  color: #d1d5db;
+  color: black;
 `;
