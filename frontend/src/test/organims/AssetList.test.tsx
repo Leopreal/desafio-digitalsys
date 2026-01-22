@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { describe, it, expect, vi, beforeEach } from "vitest";
-import { AssetListContainer } from "./AssetListContainer";
-import * as assetService from "@/services/assets.service";
+import { AssetListContainer } from "../../containers/AssetListContainer";
+import * as assetService from "../../services/assets.service";
 
 describe("AssetList", () => {
   beforeEach(() => {
@@ -25,12 +25,12 @@ describe("AssetList", () => {
     render(<AssetListContainer />);
 
     expect(await screen.findByText("BTC")).toBeInTheDocument();
-    expect(screen.getByText("2")).toBeInTheDocument();
-    expect(screen.getByText("25000")).toBeInTheDocument();
+    expect(screen.getByText(/Quantidade:\s*2/i)).toBeInTheDocument();
+    expect(screen.getByText(/Preço pago:\s*25000/i)).toBeInTheDocument();
 
     expect(screen.getByText("ETH")).toBeInTheDocument();
-    expect(screen.getByText("5")).toBeInTheDocument();
-    expect(screen.getByText("1800")).toBeInTheDocument();
+    expect(screen.getByText(/Quantidade:\s*5/i)).toBeInTheDocument();
+    expect(screen.getByText(/Preço pago:\s*1800/i)).toBeInTheDocument();
   });
 
   it("shows empty state when no assets are returned", async () => {
@@ -41,8 +41,5 @@ describe("AssetList", () => {
     expect(
       await screen.findByText(/nenhum asset encontrado/i),
     ).toBeInTheDocument();
-  });
-
-    render(<AssetListContainer />);
   });
 });
