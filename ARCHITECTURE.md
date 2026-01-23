@@ -110,6 +110,12 @@ Sobre essa diferença de componentes que lidam somente com props e outros para c
 
 Em resumo, fiquei muito feliz em fazer este desafio. Acredito que edificou muito no meu aprendizado e fez girar uma chave importante na minha maneira de pensar como o software é produzido.
 
+## Vídeo
+
+Segue abaixo o link do vídeo no Youtube da demonstração do desafio.
+
+https://youtu.be/FryvclvhflM
+
 Este desafio me tirou da zona de conforto e me mostrou que há sempre formas melhores de fazer as coisas, basta estar disposto a aprender.
 
 ---
